@@ -1,0 +1,104 @@
+Xcursor.size:48
+Xft.dpi: 220
+
+!URxvt.font: xft:source code pro:size=10,xft:FontAwesome:size=10
+URxvt.font: xft:sauce code powerline:size=10,xft:FontAwesome:size=10
+URxvt.scrollBar: false
+URxvt.saveLines: 2000
+!URxvt.scrollstyle: rxvt
+!URxvt.termName: xterm-256color
+URxvt.urgentOnBell: True
+URxvt.cursorBlink: True
+URxvt.transparent: True
+!URxvt.blurRadius: 5x5
+URxvt.shading: 30
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.iso14755: False
+URxvt.perl-ext-common: default,clipboard
+
+!TomorrowNight
+#define t_background       #2b2b2b
+#define t_current_line     #2b2b2b
+#define t_selection        #333333
+#define t_foreground       #a9b7c6
+#define t_comment          #c7dd0c
+#define t_red              #d25252
+#define t_orange           #cc7833
+#define t_yellow           #ffc66d
+#define t_green            #619647
+#define t_aqua             #a9b7c6
+#define t_blue             #6897bb
+#define t_purple           #9876aa
+!
+!
+*.foreground:   t_foreground
+*.background:   t_background
+*.cursorColor:  #a9b7c6
+!
+!! Black / Grey
+*.color0:       #2b2b2b
+*.color8:       #888888
+!
+!! Red / Bright Red
+*.color1:       t_red
+*.color9:       t_red
+!
+!! Green + Bright Green
+*.color2:       t_red
+*.color10:      #7fb347
+!
+!! Yellow (Orange) + Bright Yellow (Yellow)
+*.color3:       t_orange
+*.color11:      t_yellow
+!
+!! Blue + Bright Blue
+*.color4:       t_blue
+*.color12:      t_blue
+!
+!! Magenta (Purple) + Bright Magenta
+*.color5:       t_purple
+*.color13:      #b777e0
+!
+!! Cyan (Aqua) + Bright Cyan
+*.color6:       t_aqua
+*.color14:      t_aqua
+!
+!! Light Grey (Selection) + White (Current Line)
+*.color7:       t_selection
+*.color15:      t_current_line
+ 
+!#define r_bg   #6897bb
+#define r_bg   #2b2b2b
+!#define r_fg   #2b2b2b
+#define r_fg   #a9b7c6
+!#define r_fg   #6897bb
+#define r_hlfg #cc7833
+!#define r_hlfg #2b2b2b
+!#define r_alt #000000
+#define r_alt #2b2b2b
+
+!States: bg, fg, bgalt, hlbg, hlfg
+rofi.color-enabled: true
+rofi.hide-scrollbar: true
+rofi.color-normal: r_bg,r_fg,r_alt,r_bg,r_hlfg
+rofi.color-urgent: r_bg,#fb4934,r_alt,r_bg,r_hlfg
+rofi.color-active: r_bg,r_fg,r_alt,r_bg,#fe8019
+!states: background, border
+rofi.color-window: r_bg,#d5c4a1, #000000, #000000
+
+rofi.separator-style: none
+rofi.sidebar-mode: false
+rofi.bw: 0
+rofi.columns: 1
+rofi.padding: 60
+rofi.eh: 2
+
+!rofi.fullscreen: true
+rofi.xoffset: 0
+rofi.yoffset: 70
+!rofi.opacity: 100
+!rofi.fake-transparency: false
+rofi.location: 1
+rofi.width: 20
+rofi.font: Source Sans Pro 30
+rofi.lines: 4
