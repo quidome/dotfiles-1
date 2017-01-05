@@ -1,22 +1,18 @@
 Xcursor.size:48
 Xft.dpi: 220
 
-!URxvt.font: xft:source code pro:size=10,xft:FontAwesome:size=10
 URxvt.font: xft:sauce code powerline:size=10,xft:FontAwesome:size=10
 URxvt.scrollBar: false
 URxvt.saveLines: 2000
-!URxvt.scrollstyle: rxvt
-!URxvt.termName: xterm-256color
 URxvt.urgentOnBell: True
 URxvt.cursorBlink: True
 URxvt.transparent: True
-!URxvt.blurRadius: 5x5
 URxvt.shading: 30
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.iso14755: False
 URxvt.perl-ext-common: default,clipboard
 
-!TomorrowNight
+!Darcula
 #define t_background       #2b2b2b
 #define t_current_line     #2b2b2b
 #define t_selection        #333333
@@ -33,7 +29,8 @@ URxvt.perl-ext-common: default,clipboard
 !
 *.foreground:   t_foreground
 *.background:   t_background
-*.cursorColor:  #a9b7c6
+*.cursorColor:  t_foreground
+
 !
 !! Black / Grey
 *.color0:       #2b2b2b
@@ -44,7 +41,7 @@ URxvt.perl-ext-common: default,clipboard
 *.color9:       t_red
 !
 !! Green + Bright Green
-*.color2:       t_red
+*.color2:       t_green
 *.color10:      #7fb347
 !
 !! Yellow (Orange) + Bright Yellow (Yellow)
@@ -67,24 +64,18 @@ URxvt.perl-ext-common: default,clipboard
 *.color7:       t_selection
 *.color15:      t_current_line
  
-!#define r_bg   #6897bb
-#define r_bg   #2b2b2b
-!#define r_fg   #2b2b2b
 #define r_fg   #a9b7c6
-!#define r_fg   #6897bb
 #define r_hlfg #cc7833
-!#define r_hlfg #2b2b2b
-!#define r_alt #000000
 #define r_alt #2b2b2b
 
 !States: bg, fg, bgalt, hlbg, hlfg
 rofi.color-enabled: true
 rofi.hide-scrollbar: true
-rofi.color-normal: r_bg,r_fg,r_alt,r_bg,r_hlfg
-rofi.color-urgent: r_bg,#fb4934,r_alt,r_bg,r_hlfg
-rofi.color-active: r_bg,r_fg,r_alt,r_bg,#fe8019
+rofi.color-normal: t_background,t_foreground,t_background,t_background,t_orange
+rofi.color-urgent: t_background,t_red,t_background,t_background,t_orange
+rofi.color-active: t_background,t_foreground,t_background,t_background,t_orange
 !states: background, border
-rofi.color-window: r_bg,#d5c4a1, #000000, #000000
+rofi.color-window: t_background,#000000
 
 rofi.separator-style: none
 rofi.sidebar-mode: false
