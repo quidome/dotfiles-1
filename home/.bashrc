@@ -125,11 +125,14 @@ if [ -x /usr/bin/mint-fortune ]; then
 fi
 
 function _update_ps1() {
-    PS1="$(~/powerline-shell.py $? 2> /dev/null)"
+    PS1="$(~/powerline-shell.py --cwd-max-dir-size 1 --cwd-mode fancy $? 2> /dev/null)"
 }
 
 if [ "$TERM" != "linux" ]; then
         PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
+alias xup='xrdb .Xresources'
+alias v='vim'
+alias p='pwd'
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"

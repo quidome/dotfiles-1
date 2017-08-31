@@ -24,22 +24,32 @@ margin-bottom = 5
 [bar/Bar]
 width = 100%
 height = 70
-offset-x = 0
-offset-y = 0
+offset-x = 1%
+offset-y = 1%
 background = ${colors.grey}
 foreground = ${colors.aqua}
 
+border-size=20
+border-bottom-size=0
+border-color=#00
+
+/*override-redirect = true*/
+;radius = 10
+/*wm-restack = i3*/
 spacing = 1
 padding-left = 1
 padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = SourceCodePro:size=11;0
-font-1 = SourceSansPro:size=11;0
-font-2 = FontAwesome:size=11;0
+line-size = 4
 
-modules-left = i3
+font-0 = SourceCodePro:size=21;4
+font-1 = SourceSansPro:size=21;4
+font-2 = FontAwesome:size=21;4
+
+
+modules-left = i3 xwindow
 modules-center = mpd
 modules-right = wlan battery date
 
@@ -54,18 +64,21 @@ click-left = rofi -show run
 
 [module/i3]
 type = internal/i3
-format = <label-state> <label-mode>
+format = <label-state><label-mode>
 index-sort = true
 
 label-mode-foreground = ${colors.grey}
 label-mode-background = ${colors.red}
 label-mode-padding = 1
+label-mode-margin = 1
+
 label-focused-font = 3
 label-unfocused-font = 3
 label-urgent-font = 3
 label-visible-font = 3
 
 ws-icon-0 = 1;
+;ws-icon-0 = 1;
 ws-icon-1 = 2;
 ws-icon-2 = 3;
 ws-icon-3 = 4;
@@ -78,14 +91,18 @@ ws-icon-9 = 10;
 
 label-focused = %icon%
 label-focused-background = ${colors.orange}
+/*label-focused-background = ${colors.aqua}*/
 label-focused-foreground = ${colors.grey}
+/*label-focused-underline = ${colors.blue}*/
 label-focused-padding = 2
 
 label-unfocused = %icon%
 label-unfocused-padding = 2
 
 label-urgent = %icon%
-label-urgent-foreground = ${colors.red}
+/*label-urgent-foreground = ${colors.red}*/
+label-urgent-foreground = ${colors.grey}
+label-urgent-background = ${colors.red}
 label-urgent-padding = 2
 
 [module/mpd]
@@ -111,6 +128,8 @@ time = %H:%M
 interval = 5
 format-font =3 
 format-background = ${colors.blue}
+;/*format-background = ${colors.aqua}*/
+/*format-background = ${colors.yellow}*/
 format-foreground = ${colors.grey}
 format-padding = 1
 
@@ -140,4 +159,9 @@ animation-charging-2 = 
 animation-charging-3 = 
 animation-charging-4 = 
 animation-charging-framerate = 750
+
+[module/xwindow]
+type = internal/xwindow
+label = %title%
+label-maxlen = 30
 

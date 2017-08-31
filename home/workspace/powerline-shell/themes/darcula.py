@@ -1,13 +1,13 @@
 class Color(DefaultColor):
-    USERNAME_FG = 15
+    USERNAME_FG = 8
     USERNAME_BG = 4
     USERNAME_ROOT_BG = 1
 
-    HOSTNAME_FG = 15
+    HOSTNAME_FG = 0
     HOSTNAME_BG = 10
 
     HOME_SPECIAL_DISPLAY = False
-    PATH_FG = 6
+    PATH_FG = 14
     PATH_BG = 7
     CWD_FG = 6
     SEPARATOR_FG = 11
@@ -24,8 +24,8 @@ class Color(DefaultColor):
     JOBS_BG = 8
 
     CMD_PASSED_FG = 3
-    CMD_PASSED_BG = 15
-    CMD_FAILED_FG = 15
+    CMD_PASSED_BG = 8
+    CMD_FAILED_FG = 0
     CMD_FAILED_BG = 1
 
     SVN_CHANGES_FG = REPO_DIRTY_FG

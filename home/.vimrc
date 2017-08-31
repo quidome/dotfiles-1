@@ -1,5 +1,5 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required
+filetype on                  
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -17,12 +17,15 @@ Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'xuhdev/vim-latex-live-preview'
-Plugin 'cohlin/vim-colorschemes'
-Plugin 'vivkin/flatland.vim'
-Plugin 'chriskempson/base16-vim'
+"Plugin 'cohlin/vim-colorschemes'
+"Plugin 'vivkin/flatland.vim'
+"Plugin 'chriskempson/base16-vim'
 Plugin 'vim-airline/vim-airline-themes'
-Plugin 'blueshirts/darcula'
-""Plugin 'inu7el/darcula'
+"Plugin 'hzchirs/vim-material'
+
+colorscheme peachpuff
+"Plugin 'blueshirts/darcula'
+"Plugin 'inu7el/darcula'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -32,40 +35,27 @@ set shell=/bin/bash
 
 set ttyfast
 
-" Sessions
-let g:session_autoload = 'no'
-
 " Leader Mappings
 map <Space> <leader>
 map <Leader>w :update<CR>
 map <Leader>q :qall<CR>
-map <Leader>gs :Gstatus<CR>
-map <Leader>gc :Gcommit<CR>
-map <Leader>gp :Gpush<CR>
-"
-" RSpec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+
 
 " Toggle nerdtree with F10
-map <F10> :NERDTreeToggle<CR>
+map <Leader>t :NERDTreeToggle<CR>
 " Current file in nerdtree
-map <F9> :NERDTreeFind<CR>
+"map <F9> :NERDTreeFind<CR>
 
 " Reduce timeout after <ESC> is recvd. This is only a good idea on fast links.
 set ttimeout
 set ttimeoutlen=20
 set notimeout
 
-" highlight vertical column of cursor
-au WinLeave * set nocursorline nocursorcolumn
-au WinEnter * set cursorline
 set cursorline
 
+
 "key to insert mode with paste using F2 key
-map <F2> :set paste<CR>i
+map <Leader>i :set paste<CR>i
 " Leave paste mode on exit
 au InsertLeave * set nopaste
 
@@ -88,25 +78,23 @@ set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
 
 " Fuzzy finder: ignore stuff that can't be opened, and generated files
-let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;vendor/**;coverage/**;tmp/**;rdoc/**"
+"let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;vendor/**;coverage/**;tmp/**;rdoc/**"
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
-if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
+"if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
-endif
+"endif
 
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
 
-filetype plugin indent on
-
 augroup vimrcEx
   autocmd!
 
   " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
+  autocmd FileType text setlocal textwidth=80
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it for commit messages, when the position is invalid, or when
@@ -127,25 +115,14 @@ augroup END
 nnoremap K :Ag "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " Softtabs, 4 spaces
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
+set autoindent
+set smartindent
 
 " Display extra whitespace
 set list listchars=tab:»·,trail:·
-
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup
-  let g:grep_cmd_opts = '--line-numbers --noheading'
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-endif
 
 " Airline
 let g:airline_powerline_fonts = 1
@@ -158,8 +135,8 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_symbols.space = "\ua0"
 "let g:airline_theme='tomorrow'
-let g:airline_theme='darcula'
-"let g:airline_theme='solarized'
+"let g:airline_theme='darcula'
+let g:airline_theme='solarized'
 set t_Co=256
 
 " Enable the list of buffers
@@ -174,16 +151,13 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 
 " Color scheme
 "colorscheme solarized
-colorscheme darcula
+"colorscheme darcula
 "colorscheme flatland
 "colorscheme py-darcula
 "colorscheme base16-tomorrow-night
 set background=dark
 set encoding=utf-8
 
-hi Normal ctermbg=none
-hi NonText ctermbg=none
-hi CursorLineNr ctermbg=104 ctermfg=15
 " Numbers
 set number
 set numberwidth=5
@@ -230,7 +204,7 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
@@ -270,4 +244,5 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>h
 nnoremap <C-ö> <C-w>l
-
+" Placeholder
+nnoremap <Leader>j <Esc>/<++><Enter>c4l
