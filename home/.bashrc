@@ -136,3 +136,9 @@ alias xup='xrdb .Xresources'
 alias v='vim'
 alias p='pwd'
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+
+source "$HOME/.rvm/scripts/rvm"
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+VISUAL=vim; export VISUAL EDITOR=vim; export EDITOR;
+

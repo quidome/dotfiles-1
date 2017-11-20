@@ -163,5 +163,6 @@ animation-charging-framerate = 750
 [module/xwindow]
 type = internal/xwindow
 label = %title%
+label-margin = 1
 label-maxlen = 30
 

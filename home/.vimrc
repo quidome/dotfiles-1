@@ -1,5 +1,5 @@
 set nocompatible              " be iMproved, required
-filetype on                  
+filetype on
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -16,7 +16,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'xuhdev/vim-latex-live-preview'
+"Plugin 'xuhdev/vim-latex-live-preview'
 "Plugin 'cohlin/vim-colorschemes'
 "Plugin 'vivkin/flatland.vim'
 "Plugin 'chriskempson/base16-vim'

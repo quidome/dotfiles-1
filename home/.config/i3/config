@@ -3,8 +3,6 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-#exec_always --no-startup-id feh --bg-scale /home/thilo/Pictures/Wallpapers/david-marcu-2041.jpg
-
 exec_always --no-startup-id ~/.fehbg
 
 set $mod Mod1
@@ -86,15 +84,6 @@ bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
-#assign [class="Google-chrome"] $workspace1
-
-#exec --no-startup-id i3-msg 'workspace $workspace10; append_layout /home/thilo/.config/i3/ws0.json; exec urxvt -e htop; exec urxvt -e cava; exec urxvt -e ncmpcpp;'
-#exec --no-startup-id i3-msg 'workspace $workspace4; exec urxvt -e ranger;'
-#exec --no-startup-id i3-msg 'workspace $workspace3; exec urxvt -e vim;'
-#exec --no-startup-id i3-msg 'workspace $workspace2; exec urxvt;'
-#exec --no-startup-id i3-msg 'workspace $workspace10; append_layout /home/thilo/.config/i3/ws0.json; exec urxvt -e htop; exec urxvt -e ncmpcpp; exec urxvt -e cava'
-#exec --no-startup-id i3-msg 'workspace $workspace10; append_layout /home/thilo/.config/i3/ws0.json;'
-#exec --no-startup-id i3-msg 'workspace $workspace1; exec google-chrome-stable;'
 exec --no-startup-id i3-msg 'workspace $workspace1; exec vivaldi;'
 
 bindsym $mod+Shift+c reload
@@ -112,54 +101,32 @@ mode "$control" {
     bindsym Escape mode "default"
 }
 
-#mode "resize" {
-        #bindsym j resize shrink height 10 px or 10 ppt
-        #bindsym k resize grow height 10 px or 10 ppt
-        #bindsym l resize shrink width 10 px or 10 ppt
-        #bindsym odiaeresis resize grow width 10 px or 10 ppt
-
-        ## same bindings, but for the arrow keys
-        #bindsym Left resize shrink width 10 px or 10 ppt
-        #bindsym Down resize grow height 10 px or 10 ppt
-        #bindsym Up resize shrink height 10 px or 10 ppt
-        #bindsym Right resize grow width 10 px or 10 ppt
-
-        ## back to normal: Enter or Escape
-        #bindsym Return mode "default"
-        #bindsym Escape mode "default"
-#}
-
-#bindsym $mod+r mode "resize"
-
 #new_window none
-#new_window pixel 3
-new_window pixel 0
+#new_window pixel 2
+#new_window pixel 0
 
 # Colors
 set $blue #6897bb
 set $black #2b2b2b
 
+ for_window [class=focused_] border pixel 3
 # window colors
 #                       border   background  text     indicator
 client.focused          #6897bb  #2b2b2b     #a9b7c6  #6897bb #6897bb
-client.unfocused        #6897bb  #2b2b2b     #a9b7c6  #6897bb #6897bb
+#client.unfocused        #6897bb  #2b2b2b     #a9b7c6  #6897bb #6897bb
+client.unfocused        #2b2b2b  #2b2b2b     #a9b7c6  #6897bb #6897bb
 client.focused_inactive #6897bb  #2b2b2b     #a9b7c6  #6897bb #6897bb
 client.urgent           #ff0000  #2b2b2b     #a9b7c6  #6897bb #000000
-
-#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume 
-#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -10% #decrease sound volume
-#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q -D pulse sset Master 10%+
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q -D pulse sset Master 10%-
 bindsym XF86AudioMute exec --no-startup-id amixer -q -D pulse sset Master toggle # mute sound
 
-# Sreen brightness controls
+# Screen brightness controls
 bindsym XF86MonBrightnessUp exec light -p -A 10 # increase screen brightness
 bindsym XF86MonBrightnessDown exec light -p -U 5
 
 # Touchpad controls
-#bindsym XF86TouchpadToggle exec ~/.config/i3/toggletouchpad.sh
 bindsym $mod+Escape exec ~/.config/i3/toggletouchpad.sh
 
 # Media player controls
@@ -168,21 +135,14 @@ bindsym XF86AudioNext exec mpc next
 bindsym XF86AudioPrev exec mpc prev
 
 # gaps
-#gaps outer all set 0
 gaps inner 20
-#smart_gaps off
 smart_borders on
-
-# lock 
-#bindsym $mod+Ctrl+l exec lock -f Source-Sans-Pro -- scrot -z
 
 #exec --no-startup-id nm-applet
 exec --no-startup-id polybar Bar
-exec --no-startup-id xautolock -time 5 -locker "lock"
+exec --no-startup-id xautolock -time 10 -locker "lock"
+exec --no-startup-id xautolock -time 15 -locker "systemctl suspend"
 exec --no-startup-id redshift -l 53.558913:10.214877 -t 6500:2500
-#exec --no-startup-id xflux -l 11 -g 55
-#exec --no-startup-id xinput --set-prop 17 "Synaptics Two-Finger Scrolling" 1 1
 exec --no-startup-id xinput --set-prop 12 "Synaptics Two-Finger Scrolling" 1 1
 exec --no-startup-id setxkbmap -option caps:swapescape
-#exec --no-startup-id mpd
 exec_always --no-startup-id compton -f
