@@ -51,7 +51,7 @@ font-2 = FontAwesome:size=21;4
 
 modules-left = i3 xwindow
 modules-center = mpd
-modules-right = wlan battery date
+modules-right = volume wlan battery date
 
 tray-position = right
 tray-padding = 0
@@ -166,3 +166,28 @@ label = %title%
 label-margin = 1
 label-maxlen = 30
 
+[module/volume]
+type = internal/volume
+
+format-volume = <label-volume> <bar-volume>
+format-volume-padding = 2
+label-volume = ""
+label-volume-foreground = ${colors.aqua}
+
+format-muted-prefix = " "
+format-muted-prefix-margin = 2
+format-muted-foreground = ${colors.aqua}
+label-muted = " mute    "
+
+
+bar-volume-width = 10
+bar-volume-foreground = ${colors.aqua}
+
+bar-volume-gradient = true
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.grey}
