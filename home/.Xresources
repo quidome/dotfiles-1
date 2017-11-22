@@ -1,82 +1,67 @@
-!Xcursor.size:48
+!Xft.dpi: 220
+Xft.dpi: 96
 Xcursor.size: 64
-Xft.dpi: 220
-
-#define t_color0      #2b2b2b
-#define t_color1      #e06c75
-#define t_color2      #98c379
-#define t_color3      #e5c07b
-#define t_color4      #61afef
-#define t_color5      #c678dd
-#define t_color6      #56b6c2
-#define t_color7      #abb2bf
-!#define color8      #545862
-#define t_color8      #333333
-#define t_color9      #d19a66
-#define t_color10     #353b45
-#define t_color11     #3e4451
-#define t_color12     #565c64
-#define t_color13     #b6bdca
-#define t_color14     #be5046
-#define t_color15     #c8ccd4
-
-*.foreground: t_color15
-*.background: t_color0
-*.cursorColor: t_color15
-
-*.color0: t_color0
-*.color8: t_color8
-
-*.color1: t_color1
-*.color9: t_color9
-
-*.color2: t_color2
-*.color10: t_color10
-
-*.color3: t_color3
-*.color11: t_color11
-
-*.color4: t_color4
-*.color12: t_color12
-
-*.color5: t_color5
-*.color13: t_color13
-
-*.color6: t_color6
-*.color14: t_color14
-
-*.color7: t_color7
-*.color15: t_color15
-
-*.background:  #282c34
-*.color0:      #282c34
-*.color1:      #e06c75
-*.color2:      #98c379
-*.color3:      #e5c07b
-*.color4:      #61afef
-*.color5:      #c678dd
-*.color6:      #56b6c2
-*.color7:      #abb2bf
-*.color8:      #545862
-*.color9:      #d19a66
-*.color10:     #353b45
-*.color11:     #3e4451
-*.color12:     #565c64
-*.color13:     #b6bdca
-*.color14:     #be5046
-*.color15:     #c8ccd4
 
 URxvt.font: xft:Source Code Pro for Powerline:size=10,xft:FontAwesome:size=10
 URxvt.scrollBar: false
 URxvt.saveLines: 2000
 URxvt.urgentOnBell: True
 URxvt.cursorBlink: True
-!URxvt.transparent: False
-URxvt.transparent: True
+URxvt.transparent: False
+!URxvt.transparent: True
+!URxvt.fading: 40
 URxvt.shading: 30
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.iso14755: False
 URxvt.perl-ext-common: default,clipboard
+
+#define t_background       #2b2b2b
+#define t_black #34323a
+#define t_red   #c64f51
+#define t_green #67897e
+#define t_yellow #edca63
+#define t_blue  #065a82
+#define t_purple #5353a5
+#define t_cyan #85b5bf
+#define t_white #cebcab
+
+*.foreground: t_black
+*.background: t_white
+*.cursorColor: t_black
+
+
+! Black / Grey
+*.color0:       t_black
+*.color8:       t_black
+
+! Red / Bright Red
+*.color1:       t_red
+*.color9:       t_red
+
+! Green + Bright Green
+*.color2:       t_green
+*.color10:      t_green
+
+! Yellow (Orange) + Bright Yellow (Yellow)
+*.color3:       t_yellow
+*.color11:      t_yellow
+
+! Blue + Bright Blue
+*.color4:       t_blue
+*.color12:      t_blue
+
+! Magenta (Purple) + Bright Magenta
+*.color5:       t_purple
+*.color13:      t_purple
+
+! Cyan (Aqua) + Bright Cyan
+*.color6:       t_cyan
+*.color14:      t_cyan
+
+! Light Grey (Selection) + White (Current Line)
+*.color7: t_white
+*.color15: t_white
+
 
 !States: bg, fg, bgalt, hlbg, hlfg
 rofi.color-enabled: true
@@ -91,7 +76,7 @@ rofi.color-window: t_background,t_blue
 
 rofi.separator-style: solid
 rofi.sidebar-mode: false
-rofi.bw: 2
+rofi.bw: 4
 rofi.columns: 1
 rofi.padding: 50
 rofi.eh: 1
