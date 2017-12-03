@@ -9,6 +9,8 @@
 
 [colors]
 black = ${xrdb:*.color0}
+background = #c8222626
+accent = #ffe28131
 red = ${xrdb:*.color1}
 green = ${xrdb:*.color2}
 yellow = ${xrdb:*.color3}
@@ -24,12 +26,13 @@ margin-bottom = 5
 [bar/Bar]
 width = 100%
 height = 70
-offset-x = 1%
-offset-y = 1%
-background = ${colors.white}
-foreground = ${colors.black}
+offset-x = 0%
+offset-y = 0%
+background = ${colors.background}
+foreground = ${colors.white}
 
-border-size=20
+;border-size=20
+border-size=0
 border-bottom-size=0
 border-color=#00
 
@@ -44,8 +47,9 @@ module-margin-right = 0
 
 line-size = 4
 
-font-0 = Monoisome:size=21;4
-font-2 = FontAwesome:size=21;4
+font-0 = Fira Code:size=24;4
+;font-0 = Monoisome:size=21;4
+font-1 = FontAwesome:size=23;4
 
 
 modules-left = i3 xwindow
@@ -76,8 +80,9 @@ label-unfocused-font = 3
 label-urgent-font = 3
 label-visible-font = 3
 
-ws-icon-0 = 1;
+;ws-icon-0 = 1;
 ;ws-icon-0 = 1;
+ws-icon-0 = 1;
 ws-icon-1 = 2;
 ws-icon-2 = 3;
 ws-icon-3 = 4;
@@ -89,7 +94,8 @@ ws-icon-8 = 9;9
 ws-icon-9 = 10;
 
 label-focused = %icon%
-label-focused-background = ${colors.yellow}
+;label-focused-background = ${colors.yellow}
+label-focused-background = ${colors.accent}
 label-focused-foreground = ${colors.black}
 label-focused-padding = 2
 
@@ -114,7 +120,7 @@ interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 label-connected = %essid%
-label-disconnected = %ifname% disconnected
+label-disconnected =  WLan d/c
 ramp-signal-0 = 
 
 [module/date]
@@ -123,9 +129,11 @@ date =  %A, %b. %d  %H:%M
 time = %H:%M
 interval = 5
 format-font =3 
-format-background = ${colors.blue}
+;format-background = ${colors.yellow}
+format-background = ${colors.accent}
 format-foreground = ${colors.black}
 format-padding = 1
+format-margin = 1
 
 [module/battery]
 type = internal/battery
@@ -166,16 +174,16 @@ type = internal/volume
 format-volume = <label-volume> <bar-volume>
 format-volume-padding = 2
 label-volume = ""
-label-volume-foreground = ${colors.cyan}
+;label-volume-foreground = ${colors.cyan}
 
 format-muted-prefix = " "
 format-muted-prefix-margin = 2
-format-muted-foreground = ${colors.cyan}
+;format-muted-foreground = ${colors.cyan}
 label-muted = " mute    "
 
 
 bar-volume-width = 10
-bar-volume-foreground = ${colors.cyan}
+;bar-volume-foreground = ${colors.cyan}
 
 bar-volume-gradient = true
 bar-volume-indicator = |

@@ -1,33 +1,37 @@
-!Xft.dpi: 220
-Xft.dpi: 96
+Xft.dpi: 220
+!Xft.dpi: 96
 Xcursor.size: 64
 
-URxvt.font: xft:Source Code Pro for Powerline:size=10,xft:FontAwesome:size=10
+!URxvt.font: xft:FuraMono-Regular Powerline:size=10,xft:FontAwesome:size=10
+URxvt.font: xft:Fira Code:style=Regular:size=11,xft:FontAwesome:size=10
+!URxvt.font: xft:Source Code Pro for Powerline:size=10,xft:FontAwesome:size=10
 URxvt.scrollBar: false
 URxvt.saveLines: 2000
 URxvt.urgentOnBell: True
 URxvt.cursorBlink: True
-URxvt.transparent: False
-!URxvt.transparent: True
+!URxvt.transparent: False
+URxvt.transparent: True
 !URxvt.fading: 40
-URxvt.shading: 30
+URxvt.shading: 60
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.iso14755: False
 URxvt.perl-ext-common: default,clipboard
 
-#define t_background       #2b2b2b
-#define t_black #34323a
-#define t_red   #c64f51
-#define t_green #67897e
-#define t_yellow #edca63
-#define t_blue  #065a82
-#define t_purple #5353a5
-#define t_cyan #85b5bf
-#define t_white #cebcab
+#define t_black #222626
+#define t_background #c8222626
+#define t_transparent #00000000
+#define t_red #CC4E47
+#define t_green #7BBA4E
+#define t_yellow #e5c03b
+#define t_blue  #68aacc
+!#define t_purple #A474A5
+#define t_purple   #e28131
+#define t_cyan #97BEC6
+#define t_white #ACBFBF
 
-*.foreground: t_black
-*.background: t_white
-*.cursorColor: t_black
+*.foreground: t_white
+*.background: t_black
+*.cursorColor: t_white
 
 
 ! Black / Grey
@@ -63,16 +67,16 @@ URxvt.perl-ext-common: default,clipboard
 *.color15: t_white
 
 
-!States: bg, fg, bgalt, hlbg, hlfg
 rofi.color-enabled: true
 rofi.fuzzy: true
 rofi.dpi: 220
 rofi.hide-scrollbar: true
-rofi.color-normal: t_background,t_foreground,t_background,t_background,t_blue
-rofi.color-urgent: t_background,t_red,t_background,t_background,t_orange
-rofi.color-active: t_background,t_foreground,t_background,t_background,t_blue
+!States: bg, fg, bgalt, hlbg, hlfg
+rofi.color-normal: t_transparent,t_white,t_transparent,t_transparent,t_purple
+rofi.color-urgent: t_transparent,t_red,t_transparent,t_transparent,t_purple
+rofi.color-active: t_transparent,t_transparent,t_transparent,t_purple
 !states: background, border
-rofi.color-window: t_background,t_blue
+rofi.color-window: #c8222626,t_purple
 
 rofi.separator-style: solid
 rofi.sidebar-mode: false

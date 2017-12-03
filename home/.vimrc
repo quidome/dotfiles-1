@@ -23,7 +23,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'vim-airline/vim-airline-themes'
 "Plugin 'hzchirs/vim-material'
 
-colorscheme peachpuff
+colorscheme ron
 "Plugin 'blueshirts/darcula'
 "Plugin 'inu7el/darcula'
 

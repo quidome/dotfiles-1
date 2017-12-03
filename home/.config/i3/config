@@ -83,7 +83,7 @@ bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
-exec --no-startup-id i3-msg 'workspace $workspace1; exec vivaldi;'
+exec --no-startup-id i3-msg 'workspace $workspace1; exec firefox;'
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
@@ -96,7 +96,7 @@ mode "$control" {
     bindsym r exec systemctl reboot
     bindsym k exec i3-msg exit
     bindsym l exec lock
-    bindsym s exec sudo pm-suspend
+    bindsym s exec systemctl suspend
     bindsym Escape mode "default"
 }
 
