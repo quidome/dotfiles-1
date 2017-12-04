@@ -138,6 +138,8 @@ smart_borders on
 
 #exec --no-startup-id nm-applet
 exec --no-startup-id polybar Bar
+exec --no-startup-id killall notify-osd
+exec --no-startup-id dunst
 exec --no-startup-id xautolock -time 10 -locker "lock"
 exec --no-startup-id xautolock -time 15 -locker "systemctl suspend"
 exec --no-startup-id redshift -l 53.558913:10.214877 -t 6500:2500

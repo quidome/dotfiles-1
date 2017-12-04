@@ -10,6 +10,7 @@
 [colors]
 black = ${xrdb:*.color0}
 background = #c8222626
+;background = #99000000
 accent = #ffe28131
 red = ${xrdb:*.color1}
 green = ${xrdb:*.color2}

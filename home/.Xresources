@@ -12,7 +12,7 @@ URxvt.cursorBlink: True
 !URxvt.transparent: False
 URxvt.transparent: True
 !URxvt.fading: 40
-URxvt.shading: 60
+URxvt.shading: 50
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.iso14755: False
 URxvt.perl-ext-common: default,clipboard
@@ -76,7 +76,7 @@ rofi.color-normal: t_transparent,t_white,t_transparent,t_transparent,t_purple
 rofi.color-urgent: t_transparent,t_red,t_transparent,t_transparent,t_purple
 rofi.color-active: t_transparent,t_transparent,t_transparent,t_purple
 !states: background, border
-rofi.color-window: #c8222626,t_purple
+rofi.color-window: t_background,t_purple
 
 rofi.separator-style: solid
 rofi.sidebar-mode: false
