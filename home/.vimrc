@@ -16,16 +16,13 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdcommenter'
-"Plugin 'xuhdev/vim-latex-live-preview'
-"Plugin 'cohlin/vim-colorschemes'
-"Plugin 'vivkin/flatland.vim'
-"Plugin 'chriskempson/base16-vim'
 Plugin 'vim-airline/vim-airline-themes'
-"Plugin 'hzchirs/vim-material'
+Plugin 'vim-scripts/CycleColor'
 
+set background=dark
+set encoding=utf-8
+syntax on
 colorscheme peachpuff
-"Plugin 'blueshirts/darcula'
-"Plugin 'inu7el/darcula'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -80,11 +77,6 @@ set autowrite     " Automatically :write before running commands
 " Fuzzy finder: ignore stuff that can't be opened, and generated files
 "let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;vendor/**;coverage/**;tmp/**;rdoc/**"
 
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-"if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
-  syntax on
-"endif
 
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
@@ -134,10 +126,8 @@ if !exists('g:airline_symbols')
     let g:airline_left_sep = ''
 endif
 let g:airline_symbols.space = "\ua0"
-"let g:airline_theme='tomorrow'
-"let g:airline_theme='darcula'
-let g:airline_theme='solarized'
 set t_Co=256
+let g:airline_theme='tomorrow'
 
 " Enable the list of buffers
 let g:airline#extensions#tabline#enabled = 1
@@ -148,15 +138,6 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 :set smartcase
 :set ignorecase
 :set noantialias
-
-" Color scheme
-"colorscheme solarized
-"colorscheme darcula
-"colorscheme flatland
-"colorscheme py-darcula
-"colorscheme base16-tomorrow-night
-set background=dark
-set encoding=utf-8
 
 " Numbers
 set number
@@ -244,5 +225,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>h
 nnoremap <C-ö> <C-w>l
-" Placeholder
+
+" Placeholder <++> 
 nnoremap <Leader>j <Esc>/<++><Enter>c4l

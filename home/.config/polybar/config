@@ -8,14 +8,17 @@
 ;=====================================================
 
 [colors]
-yellow = #FFC66D
-black = #000000
-grey = #2B2B2B
-aqua = #A9B7C6
-blue = #6897BB
-white = #FFFFFF
-orange = #CC7833
-red = #D25252
+black = ${xrdb:*.color0}
+background = #c8222626
+;background = #99000000
+accent = #ffe28131
+red = ${xrdb:*.color1}
+green = ${xrdb:*.color2}
+yellow = ${xrdb:*.color3}
+blue = ${xrdb:*.color4}
+magenta = ${xrdb:*.color5}
+cyan = ${xrdb:*.color6}
+white = ${xrdb:*.color7}
 
 [global/wm]
 margin-top = 5
@@ -24,12 +27,13 @@ margin-bottom = 5
 [bar/Bar]
 width = 100%
 height = 70
-offset-x = 1%
-offset-y = 1%
-background = ${colors.grey}
-foreground = ${colors.aqua}
+offset-x = 0%
+offset-y = 0%
+background = ${colors.background}
+foreground = ${colors.white}
 
-border-size=20
+;border-size=20
+border-size=0
 border-bottom-size=0
 border-color=#00
 
@@ -44,13 +48,13 @@ module-margin-right = 0
 
 line-size = 4
 
-font-0 = SourceCodePro:size=21;4
-font-1 = SourceSansPro:size=21;4
-font-2 = FontAwesome:size=21;4
+font-0 = Fira Code:size=24;4
+;font-0 = Monoisome:size=21;4
+font-1 = FontAwesome:size=23;4
 
 
 modules-left = i3 xwindow
-modules-center = mpd
+modules-center =
 modules-right = volume wlan battery date
 
 tray-position = right
@@ -67,7 +71,7 @@ type = internal/i3
 format = <label-state><label-mode>
 index-sort = true
 
-label-mode-foreground = ${colors.grey}
+label-mode-foreground = ${colors.black}
 label-mode-background = ${colors.red}
 label-mode-padding = 1
 label-mode-margin = 1
@@ -77,8 +81,9 @@ label-unfocused-font = 3
 label-urgent-font = 3
 label-visible-font = 3
 
-ws-icon-0 = 1;
+;ws-icon-0 = 1;
 ;ws-icon-0 = 1;
+ws-icon-0 = 1;
 ws-icon-1 = 2;
 ws-icon-2 = 3;
 ws-icon-3 = 4;
@@ -90,18 +95,16 @@ ws-icon-8 = 9;9
 ws-icon-9 = 10;
 
 label-focused = %icon%
-label-focused-background = ${colors.orange}
-/*label-focused-background = ${colors.aqua}*/
-label-focused-foreground = ${colors.grey}
-/*label-focused-underline = ${colors.blue}*/
+;label-focused-background = ${colors.yellow}
+label-focused-background = ${colors.accent}
+label-focused-foreground = ${colors.black}
 label-focused-padding = 2
 
 label-unfocused = %icon%
 label-unfocused-padding = 2
 
 label-urgent = %icon%
-/*label-urgent-foreground = ${colors.red}*/
-label-urgent-foreground = ${colors.grey}
+label-urgent-foreground = ${colors.black}
 label-urgent-background = ${colors.red}
 label-urgent-padding = 2
 
@@ -118,7 +121,7 @@ interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 label-connected = %essid%
-label-disconnected = %ifname% disconnected
+label-disconnected =  WLan d/c
 ramp-signal-0 = 
 
 [module/date]
@@ -127,11 +130,11 @@ date =  %A, %b. %d  %H:%M
 time = %H:%M
 interval = 5
 format-font =3 
-format-background = ${colors.blue}
-;/*format-background = ${colors.aqua}*/
-/*format-background = ${colors.yellow}*/
-format-foreground = ${colors.grey}
+;format-background = ${colors.yellow}
+format-background = ${colors.accent}
+format-foreground = ${colors.black}
 format-padding = 1
+format-margin = 1
 
 [module/battery]
 type = internal/battery
@@ -172,16 +175,16 @@ type = internal/volume
 format-volume = <label-volume> <bar-volume>
 format-volume-padding = 2
 label-volume = ""
-label-volume-foreground = ${colors.aqua}
+;label-volume-foreground = ${colors.cyan}
 
 format-muted-prefix = " "
 format-muted-prefix-margin = 2
-format-muted-foreground = ${colors.aqua}
+;format-muted-foreground = ${colors.cyan}
 label-muted = " mute    "
 
 
 bar-volume-width = 10
-bar-volume-foreground = ${colors.aqua}
+;bar-volume-foreground = ${colors.cyan}
 
 bar-volume-gradient = true
 bar-volume-indicator = |
@@ -190,4 +193,4 @@ bar-volume-fill = ─
 bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.grey}
+bar-volume-empty-foreground = ${colors.black}

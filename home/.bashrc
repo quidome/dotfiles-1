@@ -132,9 +132,10 @@ if [ "$TERM" != "linux" ]; then
         PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
 fi
 
-alias xup='xrdb .Xresources'
+alias xup='xrdb ~/.Xresources'
 alias v='vim'
 alias p='pwd'
+alias g='grep'
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 
 source "$HOME/.rvm/scripts/rvm"
