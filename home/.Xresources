@@ -10,9 +10,10 @@ URxvt.saveLines: 2000
 URxvt.urgentOnBell: True
 URxvt.cursorBlink: True
 !URxvt.transparent: False
-URxvt.transparent: True
+!URxvt.transparent: True
 !URxvt.fading: 40
-URxvt.shading: 50
+!URxvt.shading: 50
+URxvt.depth: 32
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.iso14755: False
 URxvt.perl-ext-common: default,clipboard
@@ -32,6 +33,8 @@ URxvt.perl-ext-common: default,clipboard
 *.foreground: t_white
 *.background: t_black
 *.cursorColor: t_white
+
+URxvt.background: [75]#222626
 
 
 ! Black / Grey
