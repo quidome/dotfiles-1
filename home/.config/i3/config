@@ -95,7 +95,7 @@ mode "$control" {
     bindsym p exec systemctl poweroff
     bindsym r exec systemctl reboot
     bindsym k exec i3-msg exit
-    bindsym l exec lock
+    bindsym l mode "default"; exec lock
     bindsym s exec systemctl suspend
     bindsym Escape mode "default"
 }

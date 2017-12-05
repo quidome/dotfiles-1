@@ -54,7 +54,7 @@ font-1 = FontAwesome:size=23;4
 
 
 modules-left = i3 xwindow
-modules-center = mpd
+modules-center =
 modules-right = volume wlan battery date
 
 tray-position = right

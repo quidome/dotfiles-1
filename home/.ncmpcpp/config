@@ -4,6 +4,8 @@ mpd_crossfade_time = "3"
 mpd_host = "127.0.0.1"
 mpd_port = "6600"
 
+execute_on_song_change = ~/.ncmpcpp/notify.sh
+
 visualizer_fifo_path = "/tmp/mpd.fifo"
 visualizer_output_name = "my_fifo"
 visualizer_sync_interval = "30" 
