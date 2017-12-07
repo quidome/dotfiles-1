@@ -137,6 +137,8 @@ gaps inner 20
 smart_borders on
 
 #exec --no-startup-id nm-applet
+exec --no-startup-id mpd
+exec --no-startup-id urxvtd -q -o -f
 exec --no-startup-id polybar Bar
 exec --no-startup-id killall notify-osd
 exec --no-startup-id dunst
